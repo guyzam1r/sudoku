@@ -1,64 +1,60 @@
 import java.util.ArrayList;
 
-public class Square {
-	
-	int value;
-	int index;
+public class Box {
+	int value, index, rowNum, colNum, boxNum;
 	ArrayList<Integer> posNums = new ArrayList<Integer>();
-	int rowNum;
-	int colNum;
-	int bSquareNum;
-	
-	public Square(int value, int index){
+	int boxSize = 9;
+
+	public Box(int value, int index) {
 		this.value = value;
 		this.index = index;
-		rowNum = index / 9;
-		colNum = index % 9;
-		//bSquareNum = bsn;
+		rowNum = index / boxSize;
+		colNum = index % boxSize;
+		// boxNum = bsn;
 	}
-	
-	public Square(int index) {
+
+	public Box(int index) {
 		this.index = index;
-		rowNum = index / 9;
-		colNum = index % 9;
-		//bSquareNum = bsn;
-		for (int i = 1; i <= 9; i++) {
+		rowNum = index / boxSize;
+		colNum = index % boxSize;
+		// boxNum = bsn;
+		for (int i = 1; i <= boxSize; i++) {
 			posNums.add(i);
 		}
 	}
-	
+
 	public void setValue(int val) {
 		value = val;
 	}
-	
+
 	public int getValue() {
 		return value;
 	}
-	
+
 	public int getIndex() {
 		return index;
 	}
-	
+
 	public int getRow() {
 		return rowNum;
 	}
-	
+
 	public int getCol() {
 		return colNum;
 	}
-	
-	public int getBigSquare() {
-		return bSquareNum;
+
+	public int getBoxNum() {
+		return boxNum;
 	}
-	
+
 	public ArrayList<Integer> getPosNums() {
 		return posNums;
 	}
-	
+
 	public boolean isFilled() {
 		return posNums.size() == 0;
 	}
-	
+
 	public void fill() {
 		value = posNums.get(0);
 		posNums.clear();

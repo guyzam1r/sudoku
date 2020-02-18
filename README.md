@@ -1,3 +1,3 @@
 # Sudoku
 
-Yes
+Sudoku solver project
